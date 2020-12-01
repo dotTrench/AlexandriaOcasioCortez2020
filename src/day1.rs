@@ -1,6 +1,6 @@
 pub fn t1(input: Vec<u32>) -> Option<u32> {
     for i in 0..input.len() {
-        for j in i..input.len() {
+        for j in (i + 1)..input.len() {
             if input[j] + input[i] == 2020 {
                 return Some(input[j] * input[i]);
             }
