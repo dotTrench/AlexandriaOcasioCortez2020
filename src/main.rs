@@ -1,16 +1,14 @@
 mod day1;
+mod util;
 
 fn main() {
-    match day1::run(read_input_vec("inputs/day1.txt")) {
-        Some(answer) => println!("Day1: {}", answer),
-        None => println!("Day1: No answer found")
+    match day1::t1(util::read_input_vec("inputs/day1.txt")) {
+        Some(answer) => println!("D1T1: {}", answer),
+        None => println!("D1T1: No answer found")
     };
-}
 
-fn read_input_vec(path: &str) -> Vec<u32> {
-    std::fs::read_to_string(path)
-        .expect("Could not open file")
-        .lines()
-        .map(|line| line.parse().expect("Failed to parse line"))
-        .collect()
+    match day1::t2(util::read_input_vec("inputs/day1.txt")) {
+        Some(answer) => println!("D1T2: {}", answer),
+        None => println!("D1T2: No answer found")
+    };
 }
